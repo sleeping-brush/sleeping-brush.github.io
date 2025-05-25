@@ -1,28 +1,127 @@
-.art-item {
-  display: block;
-  margin-bottom: 2.5rem;
-  text-align: center;
-  break-inside: avoid;
-  transition: transform 0.2s ease;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Art — Sleeping Brush</title>
 
-.art-item:hover {
-  transform: scale(1.02);
-}
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap');
 
-.art-item img {
-  width: 100%;
-  display: block;
-  border: 12px solid #d4af37; /* golden border */
-  outline: 4px solid #a57c1b; /* inner frame depth */
-  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
-}
+    :root {
+      --bg: #f8f4ee;
+      --text: #2b2b2b;
+      --gold: #d4af37;
+      --gold-deep: #a57c1b;
+    }
 
-.caption {
-  font-family: 'Playfair Display', serif;
-  font-style: italic;
-  font-size: 1rem;
-  margin-top: 0.8rem;
-  color: #2b2b2b;
-}
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
+    header {
+      margin-top: 3rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin: 0;
+      text-transform: lowercase;
+      letter-spacing: 0.03em;
+    }
+
+    /* Gallery grid */
+    .gallery {
+      margin: 4rem auto 6rem;
+      width: 90%;
+      max-width: 1100px;
+      column-count: 3;
+      column-gap: 2rem;
+    }
+
+    /* Art item */
+    .art-item {
+      display: block;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      break-inside: avoid;
+      transition: transform 0.2s ease;
+    }
+
+    .art-item:hover {
+      transform: scale(1.02);
+    }
+
+    .art-item img {
+      width: 100%;
+      display: block;
+      border: 12px solid var(--gold);
+      outline: 4px solid var(--gold-deep);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    }
+
+    .caption {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1rem;
+      margin-top: 0.8rem;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 900px) {
+      .gallery {
+        column-count: 2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+        margin-top: 2rem;
+      }
+
+      .gallery {
+        column-count: 1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>art gallery</h1>
+  </header>
+
+  <section class="gallery">
+    <!-- Art 1 -->
+    <a class="art-item" href="images/summer-dawn.jpg" target="_blank">
+      <img src="images/summer-dawn.jpg" alt="Summer Dawn painting">
+      <p class="caption">summer dawn<br><em>soft skies remember us</em></p>
+    </a>
+
+    <!-- Art 2 -->
+    <a class="art-item" href="images/moody-cliffs.jpg" target="_blank">
+      <img src="images/moody-cliffs.jpg" alt="Moody Cliffs painting">
+      <p class="caption">moody cliffs<br><em>mist clings to quiet thoughts</em></p>
+    </a>
+
+    <!-- Art 3 -->
+    <a class="art-item" href="images/gentle-rain.jpg" target="_blank">
+      <img src="images/gentle-rain.jpg" alt="Gentle Rain painting">
+      <p class="caption">gentle rain<br><em>echoes on sleepy roofs</em></p>
+    </a>
+
+    <!-- Duplicate as needed -->
+  </section>
+</body>
+</html>
