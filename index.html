@@ -57,10 +57,11 @@
 
     .polaroid img {
       width: 100%;
-      height: auto;
+      height: 220px; /* this fixes height to match the width */
+      object-fit: cover; /* this makes the image fill the box and crop cleanly */
       display: block;
-      margin-bottom: 12px;
     }
+
 
     .polaroid span {
       font-family: 'Playfair Display', serif;
