@@ -1,31 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <title>art</title>
-  <style>
-    body {
-      background-color: #f7f2eb;
-      font-family: 'Georgia', serif;
-      color: #3a2e2e;
-      padding: 3em;
-      max-width: 700px;
-      margin: auto;
-    }
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.3em;
-    }
-    p {
-      font-size: 1.1em;
-      line-height: 1.6;
-      margin-bottom: 1.5em;
-    }
-  </style>
-</head>
-<body>
-  <h1>art</h1>
-  <p>here are my paintings:)</p>
-  
-</body>
-</html>
+.art-item {
+  display: block;
+  margin-bottom: 2.5rem;
+  text-align: center;
+  break-inside: avoid;
+  transition: transform 0.2s ease;
+}
+
+.art-item:hover {
+  transform: scale(1.02);
+}
+
+.art-item img {
+  width: 100%;
+  display: block;
+  border: 12px solid #d4af37; /* golden border */
+  outline: 4px solid #a57c1b; /* inner frame depth */
+  box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+.caption {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1rem;
+  margin-top: 0.8rem;
+  color: #2b2b2b;
+}
+
