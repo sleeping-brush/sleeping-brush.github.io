@@ -4,13 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Art — Sleeping Brush</title>
-  
+
   <style>
-    /* ───────────────────────── fonts & colours ───────────────────────── */
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap');
 
     :root {
-      --bg: #dceeff;        /* same blue as home page */
+      --bg: #dceeff;
       --text: #2b2b2b;
     }
 
@@ -24,8 +23,7 @@
       align-items: center;
     }
 
-    /* ───────────── back button ───────────── */
-    .back-btn{
+    .back-btn {
       position: fixed;
       top: 20px;
       left: 20px;
@@ -33,134 +31,137 @@
       font-size: 1.1rem;
       text-decoration: none;
       color: var(--text);
-      background:#fff;
-      padding:6px 14px;
-      border:1px solid #999;
-      border-radius:8px;
-      box-shadow:0 4px 10px rgba(0,0,0,.12);
-      transition:background .2s,color .2s;
-      z-index:999;
+      background: #fff;
+      padding: 6px 14px;
+      border: 1px solid #999;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,.12);
+      transition: background 0.2s, color 0.2s;
+      z-index: 999;
     }
-    .back-btn:hover{ background:var(--text); color:#fff; }
 
-    /* ───────────── header ───────────── */
-    header{
-      margin-top:3.5rem;
-      text-align:center;
+    .back-btn:hover {
+      background: var(--text);
+      color: #fff;
     }
-   header h1 {
+
+    header {
+      margin-top: 4.5rem;
+      text-align: center;
+    }
+
+    header h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 3.2rem;
+      font-size: 3rem;
       text-transform: lowercase;
       letter-spacing: 0.03em;
       margin: 0;
     }
 
-
-    /* ───────────── gallery columns ───────────── */
-    .gallery{
-      margin:4rem auto 6rem;
-      width:90%;
-      max-width:1100px;
-      column-count:3;
-      column-gap:2rem;
+    .gallery {
+      margin: 4rem auto 6rem;
+      width: 90%;
+      max-width: 1100px;
+      column-count: 3;
+      column-gap: 2rem;
     }
 
-    /* ───────────── ornate frame item ───────────── */
-    .art-item{
-      display:block;
-      margin-bottom:2.8rem;
-      text-align:center;
-      break-inside:avoid;
-      transition:transform .25s;
+    .art-item {
+      display: block;
+      margin-bottom: 2.5rem;
+      text-align: center;
+      break-inside: avoid;
+      transition: transform 0.25s;
     }
-    .art-item:hover{ transform:scale(1.02); }
 
-    /* frame wrapper: uses uploaded PNG as background */
-    .frame{
-      background:url("images/frame.png") center/contain no-repeat;
-      aspect-ratio: 4 / 3;           /* keeps constant frame shape */
-      position: relative;
+    .art-item:hover {
+      transform: scale(1.02);
+    }
+
+    .art-item img {
       width: 100%;
-      box-shadow:0 12px 28px rgba(0,0,0,.25);
+      display: block;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
     }
 
-    /* painting fits inside transparent hole */
-    .frame img {
-      position: absolute;
-      top: 10%;
-      left: 10%;
-      width: 80%;
-      height: 80%;
-      object-fit: cover;
-      object-position: center;
-      overflow: hidden;
+    .caption {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1rem;
+      margin-top: 0.8rem;
+      color: var(--text);
+      line-height: 1.4;
     }
 
-
-    .caption{
-      font-family:'Playfair Display',serif;
-      font-style:italic;
-      font-size:1rem;
-      margin-top:.8rem;
-      color:var(--text);
-      line-height:1.4;
+    @media (max-width: 900px) {
+      .gallery {
+        column-count: 2;
+      }
     }
 
-    /* ───────── mobile tweaks ───────── */
-    @media(max-width:900px){ .gallery{column-count:2;} }
-    @media(max-width:600px){
-      header h1{font-size:2rem;margin-top:2.2rem;}
-      .gallery{column-count:1;}
-      .back-btn{top:12px;left:12px;padding:5px 12px;font-size:1rem;}
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2.2rem;
+        margin-top: 3rem;
+      }
+      .gallery {
+        column-count: 1;
+      }
+      .back-btn {
+        top: 12px;
+        left: 12px;
+        padding: 5px 12px;
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 
 <body>
-  <!-- back button -->
   <a class="back-btn" href="index.html">← home</a>
 
   <header>
-    <h1>Art Gallery</h1>
+    <h1>art gallery</h1>
   </header>
 
-<section class="gallery">
+  <section class="gallery">
 
-  <!-- Painting 1 -->
-  <a class="art-item" href="images/unknown_land.jpg" target="_blank">
-  <div class="frame">
-    <img src="images/unknown_land.jpg" alt="Unknown Land painting" 
-      style="transform: rotate(-90deg); position: absolute; top: 10%; left: 10%; width: 80%; height: 80%; object-fit: cover; object-position: center;" />
-  </div>
-  <p class="caption">unknown land<br><em>no map, only memory</em></p>
-</a>
+    <!-- Painting 1 -->
+    <a class="art-item" href="images/photo-output.jpg" target="_blank">
+      <img src="images/photo-output.jpg" alt="Painting 1" />
+      <p class="caption">unknown land<br><em>no map, only memory</em></p>
+    </a>
 
+    <!-- Painting 2 -->
+    <a class="art-item" href="images/photo-output_1.jpg" target="_blank">
+      <img src="images/photo-output_1.jpg" alt="Painting 2" />
+      <p class="caption">poppies by the sea<br><em>red petals whisper to the wind</em></p>
+    </a>
 
-  <!-- Painting 2 -->
-  <a class="art-item" href="images/poppies_by_the_sea.jpg" target="_blank">
-    <div class="frame">
-      <img src="images/poppies_by_the_sea.jpg" alt="Poppies by the Sea painting"
-           style="position: absolute; top: 10%; left: 10%; width: 80%; height: 80%; object-fit: cover; object-position: center;" />
+    <!-- Painting 3 -->
+    <a class="art-item" href="images/photo-output_2.jpg" target="_blank">
+      <img src="images/photo-output_2.jpg" alt="Painting 3" />
+      <p class="caption">brainwashed<br><em>colors leaking through silence</em></p>
+    </a>
 
-    </div>
-    <p class="caption">poppies by the sea<br><em>red petals whisper to the wind</em></p>
-  </a>
+    <!-- Painting 4 -->
+    <a class="art-item" href="images/photo-output_3.jpg" target="_blank">
+      <img src="images/photo-output_3.jpg" alt="Painting 4" />
+      <p class="caption">mist garden<br><em>dew caught in thought</em></p>
+    </a>
 
-  <!-- Painting 3 -->
-  <a class="art-item" href="images/brainwashed.jpg" target="_blank">
-    <div class="frame">
-      <img src="images/brainwashed.jpg" alt="Brainwashed painting"
-           style="position: absolute; top: 10%; left: 10%; width: 80%; height: 80%; object-fit: cover; object-position: center;"/>
+    <!-- Painting 5 -->
+    <a class="art-item" href="images/photo-output_4.jpg" target="_blank">
+      <img src="images/photo-output_4.jpg" alt="Painting 5" />
+      <p class="caption">soft valley<br><em>where no one hurries</em></p>
+    </a>
 
-    </div>
-    <p class="caption">brainwashed<br><em>colors leaking through silence</em></p>
-  </a>
+    <!-- Painting 6 -->
+    <a class="art-item" href="images/photo-output_5.jpg" target="_blank">
+      <img src="images/photo-output_5.jpg" alt="Painting 6" />
+      <p class="caption">sky mirror<br><em>clouds sleep on water</em></p>
+    </a>
 
-</section>
-
-
-    <!-- duplicate art-item blocks for each new painting -->
   </section>
 </body>
 </html>
