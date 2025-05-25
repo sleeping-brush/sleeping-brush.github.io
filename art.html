@@ -6,110 +6,99 @@
   <title>Art — Sleeping Brush</title>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&display=swap');
+    /* ——— Google font (same as homepage) ——— */
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
 
-    :root {
-      --bg: #dceeff;
+    :root{
+      --bg:   #dceeff;
       --text: #2b2b2b;
     }
 
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    /* ——— base layout ——— */
+    body{
+      margin:0;
+      font-family: Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
     }
 
-    .back-btn {
-      position: fixed;
-      top: 20px;
-      left: 20px;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      text-decoration: none;
-      color: var(--text);
-      background: #fff;
-      padding: 6px 14px;
-      border: 1px solid #999;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,.12);
-      transition: background 0.2s, color 0.2s;
-      z-index: 999;
+    /* ——— back button ——— */
+    .back-btn{
+      position:fixed;
+      top:20px;
+      left:20px;
+      font-family:'Playfair Display',cursive;
+      font-size:1.1rem;
+      text-decoration:none;
+      color:var(--text);
+      background:#fff;
+      padding:6px 14px;
+      border:1px solid #999;
+      border-radius:8px;
+      box-shadow:0 4px 10px rgba(0,0,0,.12);
+      transition:background .2s,color .2s;
+      z-index:999;
+    }
+    .back-btn:hover{background:var(--text);color:#fff;}
+
+    /* ——— title ——— */
+    header{
+      margin-top:4.5rem;
+      text-align:center;
+    }
+    header h1{
+      font-family:'Playfair Display',cursive;   /* identical to home page */
+      font-size:3rem;
+      text-transform:lowercase;
+      letter-spacing:.03em;
+      margin:0;
     }
 
-    .back-btn:hover {
-      background: var(--text);
-      color: #fff;
+    /* ——— gallery strip ——— */
+    .gallery{
+      width:100%;
+      max-width:1200px;
+      margin:4rem auto 6rem;
+      padding:0 2rem;
+      display:flex;
+      flex-wrap:wrap;           /* allows wrapping on small screens */
+      justify-content:flex-start; /* new rows begin at the left */
+      gap:2rem;
     }
 
-    header {
-      margin-top: 4.5rem;
-      text-align: center;
+    .art-item{
+      width:200px;              /* same width for every item */
+      flex:0 0 200px;           /* prevents stretching */
+      text-align:center;
+      transition:transform .2s;
+    }
+    .art-item:hover{transform:scale(1.04);}
+
+    .art-item img{
+      width:100%;
+      height:180px;             /* uniform height so captions align */
+      object-fit:cover;
+      box-shadow:0 8px 16px rgba(0,0,0,.15);
+      display:block;
     }
 
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      text-transform: lowercase;
-      letter-spacing: 0.03em;
-      margin: 0;
+    .caption{
+      font-family:'Playfair Display',serif;
+      font-style:italic;
+      font-size:.95rem;
+      margin-top:.5rem;
+      color:var(--text);
+      line-height:1.35;
     }
 
-    .gallery {
-      margin: 4rem auto 6rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      padding: 0 2rem;
-      max-width: 100%;
-    }
-
-    .art-item {
-      width: 200px;
-      text-align: center;
-      transition: transform 0.2s ease;
-    }
-
-    .art-item:hover {
-      transform: scale(1.03);
-    }
-
-    .art-item img {
-      width: 100%;
-      display: block;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    }
-
-    .caption {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: 0.95rem;
-      margin-top: 0.5rem;
-      color: var(--text);
-      line-height: 1.4;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2.2rem;
-        margin-top: 3rem;
-      }
-
-      .back-btn {
-        top: 12px;
-        left: 12px;
-        padding: 5px 12px;
-        font-size: 1rem;
-      }
-
-      .art-item {
-        width: 100%;
-        max-width: 320px;
-      }
+    /* ——— mobile tweaks ——— */
+    @media(max-width:600px){
+      header h1{font-size:2.2rem;margin-top:3rem;}
+      .back-btn{top:12px;left:12px;padding:5px 12px;font-size:1rem;}
+      .art-item{width:48%;flex:0 0 48%;}
     }
   </style>
 </head>
@@ -122,41 +111,41 @@
   </header>
 
   <section class="gallery">
-    <!-- Painting 1 (rotated) -->
+    <!-- Painting 1 — rotated 90° but fits the box -->
     <a class="art-item" href="images/photo-output.jpg" target="_blank">
       <img src="images/photo-output.jpg"
            alt="Unknown Land"
-           style="transform: rotate(90deg); max-width: 100%; display: block;" />
+           style="transform:rotate(-90deg);" />
       <p class="caption">unknown land<br><em>no map, only memory</em></p>
     </a>
 
     <!-- Painting 2 -->
     <a class="art-item" href="images/photo-output_1.jpg" target="_blank">
-      <img src="images/photo-output_1.jpg" alt="Poppies by the Sea" />
+      <img src="images/photo-output_2.jpg" alt="Poppies by the Sea" />
       <p class="caption">poppies by the sea<br><em>red petals whisper to the wind</em></p>
     </a>
 
     <!-- Painting 3 -->
     <a class="art-item" href="images/photo-output_2.jpg" target="_blank">
-      <img src="images/photo-output_2.jpg" alt="peace pond" />
+      <img src="images/photo-output_1.jpg" alt="Brainwashed" />
       <p class="caption">brainwashed<br><em>colors leaking through silence</em></p>
     </a>
 
     <!-- Painting 4 -->
     <a class="art-item" href="images/photo-output_3.jpg" target="_blank">
-      <img src="images/photo-output_3.jpg" alt="brainwashed" />
+      <img src="images/photo-output_3.jpg" alt="Arid Heart" />
       <p class="caption">mist garden<br><em>dew caught in thought</em></p>
     </a>
 
     <!-- Painting 5 -->
     <a class="art-item" href="images/photo-output_4.jpg" target="_blank">
-      <img src="images/photo-output_4.jpg" alt="arid heart" />
+      <img src="images/photo-output_4.jpg" alt="Peace POnd" />
       <p class="caption">soft valley<br><em>where no one hurries</em></p>
     </a>
 
     <!-- Painting 6 -->
     <a class="art-item" href="images/photo-output_5.jpg" target="_blank">
-      <img src="images/photo-output_5.jpg" alt="summer storm" />
+      <img src="images/photo-output_5.jpg" alt="Summer Storm" />
       <p class="caption">sky mirror<br><em>clouds sleep on water</em></p>
     </a>
   </section>
