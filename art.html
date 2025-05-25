@@ -48,8 +48,8 @@
       margin-top:3.5rem;
       text-align:center;
     }
-    header h1 {
-      font-family: 'Playfair Display', cursive;
+   header h1 {
+      font-family: 'Playfair Display', serif;
       font-size: 3.2rem;
       text-transform: lowercase;
       letter-spacing: 0.03em;
@@ -86,15 +86,17 @@
     }
 
     /* painting fits inside transparent hole */
-    .frame img{
-      position:absolute;
-      top:8%;
-      left:8%;
-      width:84%;
-      height:84%;
-      object-fit:cover;
-      border:none;
+    .frame img {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      width: 80%;
+      height: 80%;
+      object-fit: cover;
+      object-position: center;
+      overflow: hidden;
     }
+
 
     .caption{
       font-family:'Playfair Display',serif;
@@ -127,11 +129,12 @@
 
   <!-- Painting 1 -->
   <a class="art-item" href="images/unknown_land.jpg" target="_blank">
-    <div class="frame">
-      <img src="images/unknown_land.jpg" alt="Unknown Land painting">
-    </div>
-    <p class="caption">unknown land<br><em>no map, only memory</em></p>
-  </a>
+  <div class="frame">
+    <img src="images/unknown_land.jpg" alt="Unknown Land painting" style="transform: rotate(-90deg);" />
+  </div>
+  <p class="caption">unknown land<br><em>no map, only memory</em></p>
+</a>
+
 
   <!-- Painting 2 -->
   <a class="art-item" href="images/poppies_by_the_sea.jpg" target="_blank">
