@@ -60,43 +60,37 @@
 
     .gallery {
       margin: 4rem auto 6rem;
-      width: 90%;
-      max-width: 1100px;
-      column-count: 3;
-      column-gap: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 0 2rem;
+      max-width: 100%;
     }
 
     .art-item {
-      display: block;
-      margin-bottom: 2.5rem;
+      width: 200px;
       text-align: center;
-      break-inside: avoid;
-      transition: transform 0.25s;
+      transition: transform 0.2s ease;
     }
 
     .art-item:hover {
-      transform: scale(1.02);
+      transform: scale(1.03);
     }
 
     .art-item img {
       width: 100%;
       display: block;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     }
 
     .caption {
       font-family: 'Playfair Display', serif;
       font-style: italic;
-      font-size: 1rem;
-      margin-top: 0.8rem;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
       color: var(--text);
       line-height: 1.4;
-    }
-
-    @media (max-width: 900px) {
-      .gallery {
-        column-count: 2;
-      }
     }
 
     @media (max-width: 600px) {
@@ -104,14 +98,17 @@
         font-size: 2.2rem;
         margin-top: 3rem;
       }
-      .gallery {
-        column-count: 1;
-      }
+
       .back-btn {
         top: 12px;
         left: 12px;
         padding: 5px 12px;
         font-size: 1rem;
+      }
+
+      .art-item {
+        width: 100%;
+        max-width: 320px;
       }
     }
   </style>
@@ -125,46 +122,44 @@
   </header>
 
   <section class="gallery">
-
-    <!-- Painting 1 -->
+    <!-- Painting 1 (rotated) -->
     <a class="art-item" href="images/photo-output.jpg" target="_blank">
-      
       <img src="images/photo-output.jpg"
-           alt="Painting 1"
+           alt="Unknown Land"
            style="transform: rotate(90deg); max-width: 100%; display: block;" />
       <p class="caption">unknown land<br><em>no map, only memory</em></p>
     </a>
 
     <!-- Painting 2 -->
     <a class="art-item" href="images/photo-output_1.jpg" target="_blank">
-      <img src="images/photo-output_1.jpg" alt="Painting 2" />
+      <img src="images/photo-output_1.jpg" alt="Poppies by the Sea" />
       <p class="caption">poppies by the sea<br><em>red petals whisper to the wind</em></p>
     </a>
 
     <!-- Painting 3 -->
     <a class="art-item" href="images/photo-output_2.jpg" target="_blank">
-      <img src="images/photo-output_2.jpg" alt="Painting 3" />
+      <img src="images/photo-output_2.jpg" alt="peace pond" />
       <p class="caption">brainwashed<br><em>colors leaking through silence</em></p>
     </a>
 
     <!-- Painting 4 -->
     <a class="art-item" href="images/photo-output_3.jpg" target="_blank">
-      <img src="images/photo-output_3.jpg" alt="Painting 4" />
+      <img src="images/photo-output_3.jpg" alt="brainwashed" />
       <p class="caption">mist garden<br><em>dew caught in thought</em></p>
     </a>
 
     <!-- Painting 5 -->
     <a class="art-item" href="images/photo-output_4.jpg" target="_blank">
-      <img src="images/photo-output_4.jpg" alt="Painting 5" />
+      <img src="images/photo-output_4.jpg" alt="arid heart" />
       <p class="caption">soft valley<br><em>where no one hurries</em></p>
     </a>
 
     <!-- Painting 6 -->
     <a class="art-item" href="images/photo-output_5.jpg" target="_blank">
-      <img src="images/photo-output_5.jpg" alt="Painting 6" />
+      <img src="images/photo-output_5.jpg" alt="summer storm" />
       <p class="caption">sky mirror<br><em>clouds sleep on water</em></p>
     </a>
-
   </section>
 </body>
 </html>
+
