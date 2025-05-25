@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sleeping Brush</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
@@ -103,6 +104,51 @@
     .contact-button:hover {
       background-color: #2b2b2b;
       color: #fff;
+    }
+    /* ============================= */
+    /*  Mobile tweaks (≤ 600 px)     */
+    /* ============================= */
+    @media (max-width: 600px) {
+    
+      /* shrink header text */
+      header h1 {
+        font-size: 2.2rem;
+      }
+    
+      /* stack polaroids vertically */
+      .polaroid-container {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: center;
+      }
+    
+      /* make each polaroid fill most of the screen width */
+      .polaroid {
+        width: 80vw;        /* 80 % of viewport width  */
+        max-width: 320px;   /* but never wider than 320 px */
+        padding: 10px 10px 38px;
+      }
+    
+      /* keep square images regardless of new width */
+      .polaroid img {
+        height: 80vw;       /* equal to width, stays square   */
+        max-height: 320px;  /* cap like above                 */
+      }
+    
+      /* shrink quote text */
+      .quote {
+        font-size: 1.1rem;
+        margin-top: 2rem;
+        margin-bottom: 4rem;
+      }
+    
+      /* make the contact button smaller & keep it visible */
+      .contact-button {
+        font-size: 1rem;
+        padding: 8px 16px;
+        bottom: 15px;
+        left: 15px;
+      }
     }
 
   </style>
