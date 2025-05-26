@@ -1,31 +1,147 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>projects</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Sleeping Brush</title>
+
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+
+    :root {
+      --bg: #dceeff;
+      --text: #2b2b2b;
+    }
+
     body {
-      background-color: #f7f2eb;
-      font-family: 'Georgia', serif;
-      color: #3a2e2e;
-      padding: 3em;
-      max-width: 700px;
-      margin: auto;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.3em;
+
+    .back-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      font-family: 'Playfair Display', cursive;
+      font-size: 1.1rem;
+      text-decoration: none;
+      color: var(--text);
+      background: #fff;
+      padding: 6px 14px;
+      border: 1px solid #999;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
-    p {
-      font-size: 1.1em;
-      line-height: 1.6;
-      margin-bottom: 1.5em;
+
+    .back-btn:hover {
+      background: var(--text);
+      color: #fff;
+    }
+
+    header {
+      margin-top: 4.5rem;
+      text-align: left;
+      width: 100%;
+      padding-left: 2rem;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', cursive;
+      font-size: 3rem;
+      text-transform: lowercase;
+      letter-spacing: 0.03em;
+      margin: 0;
+    }
+
+    .gallery {
+      width: 100%;
+      max-width: 1200px;
+      margin: 4rem auto 6rem;
+      padding: 0 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .project-item {
+      width: 200px;
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .project-item:hover {
+      transform: scale(1.04);
+    }
+
+    .project-item img {
+      width: 100%;
+      height: auto;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      display: block;
+      border-radius: 8px;
+    }
+
+    .caption {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+      color: var(--text);
+      line-height: 1.35;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        text-align: center;
+        padding-left: 0;
+      }
+
+      .back-btn {
+        top: 12px;
+        left: 12px;
+        padding: 5px 12px;
+        font-size: 1rem;
+      }
+
+      .project-item {
+        width: 48%;
+        flex: 0 0 48%;
+      }
     }
   </style>
 </head>
+
 <body>
-  <h1>about me</h1>
-  <p>here are my projects:)</p>
- 
+  <a class="back-btn" href="index.html">← home</a>
+
+  <header>
+    <h1>projects</h1>
+  </header>
+
+  <section class="gallery">
+    <!-- Placeholder project -->
+    <div class="project-item">
+      <img src="images/placeholder-project.jpg" alt="Coming soon">
+      <p class="caption">coming soon<br><em>a blend of poetry and code</em></p>
+    </div>
+
+    <!-- You can duplicate and edit this block for future projects -->
+    <!--
+    <div class="project-item">
+      <img src="images/your-project.jpg" alt="My Project">
+      <p class="caption">project title<br><em>short poetic line or purpose</em></p>
+    </div>
+    -->
+  </section>
 </body>
 </html>
