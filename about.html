@@ -8,158 +8,71 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
 
-    :root {
-      --bg: #dceeff;
-      --text: #2b2b2b;
+    :root{
+      --bg:#dceeff;
+      --text:#2b2b2b;
+      --arrow:#f7c948;        /* golden arrow colour */
     }
 
-    body {
-      margin: 0;
-      padding: 0;
-      background: var(--bg);
-      font-family: Arial, sans-serif;
-      color: var(--text);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    /*  base layout  */
+    body{
+      margin:0;
+      background:var(--bg);
+      font-family:Arial,sans-serif;
+      color:var(--text);
+      display:flex;
+      flex-direction:column;
+      align-items:center;
     }
 
-    .back-btn {
-      position: fixed;
-      bottom: 20px;
-      left: 20px;
-      font-family: 'Playfair Display', cursive;
-      font-size: 1.1rem;
-      text-decoration: none;
-      color: var(--text);
-      background: #fff;
-      padding: 6px 14px;
-      border: 1px solid #999;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /*  back button  */
+    .back-btn{
+      position:fixed;bottom:20px;left:20px;
+      font-family:'Playfair Display',cursive;
+      font-size:1.1rem;
+      text-decoration:none;color:var(--text);
+      background:#fff;padding:6px 14px;border:1px solid #999;
+      border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,.1);
+    }
+    .back-btn:hover{background:var(--text);color:#fff;}
+
+    /*  page title + stars  */
+    header{margin:4rem 0 2rem;width:100%;text-align:left;padding-left:2rem;}
+    header h1{font-family:'Playfair Display',cursive;font-size:3.3rem;text-transform:lowercase;letter-spacing:.03em;margin:0;}
+
+    .star-header{position:relative;display:inline-block;padding:0 2.2rem;}
+    .star-header::before,.star-header::after{
+      content:"★";position:absolute;top:50%;transform:translateY(-50%);
+      font-family:'Playfair Display',serif;font-size:1.6rem;color:#f7c948;text-shadow:0 0 6px rgba(255,255,255,.7);
+      animation:twinkle 4s ease-in-out infinite alternate;
+    }
+    .star-header::before{left:0;}
+    .star-header::after{right:0;}
+    @keyframes twinkle{0%,100%{transform:translateY(-50%) scale(1);opacity:1;}50%{transform:translateY(-50%) scale(1.25);opacity:.6;}}
+
+    /*  main two-column block  */
+    .about-container{
+      max-width:1000px;display:flex;gap:3rem;
+      margin:0 2rem 6rem;align-items:center;justify-content:center;
+    }
+    .photo{flex:1;max-width:320px;border-radius:12px;overflow:hidden;box-shadow:0 8px 24px rgba(0,0,0,.2);}
+    .photo img{width:100%;display:block;}
+
+    /*  arrow list  */
+    .points{flex:2;display:flex;flex-direction:column;gap:1.1rem;font-family:'Playfair Display',serif;font-size:1.05rem;line-height:1.5;}
+    .points span{position:relative;padding-left:2.4rem;}
+    .points span::before{
+      content:"➜";             /* arrow glyph */
+      position:absolute;left:0;top:0;color:var(--arrow);font-size:1.3rem;
     }
 
-    .back-btn:hover {
-      background: var(--text);
-      color: #fff;
-    }
-
-    header {
-      text-align: left;
-      margin-top: 4rem;
-      margin-bottom: 3rem;
-    }
-
-    header h1 {
-      font-family: 'Playfair Display', cursive;
-      font-size: 3.5rem;
-      color: #2b2b2b;
-      margin: 0;
-    }
-    /* decorative stars around “who I am” */
-    .star-header {
-      position: relative;                 /*  enable pseudo-elements  */
-      display: inline-block;              /*  so stars hug the text   */
-      padding: 0 2.2rem;                  /*  room for the stars      */
-    }
-    
-    /* left star */
-    .star-header::before,
-    .star-header::after {
-      content: "★";
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%) scale(1);
-      font-family: 'Playfair Display', serif;   /* keeps same feel */
-      font-size: 1.6rem;
-      color: #f7c948;                           /* warm gold star  */
-      text-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
-    }
-    
-    .star-header::before {
-      left: 0;
-    }
-    
-    .star-header::after {
-      right: 0;
-    }
-    
-    /* subtle twinkle animation */
-    @keyframes twinkle {
-      0%, 100% { transform: translateY(-50%) scale(1);   opacity: 1; }
-      50%      { transform: translateY(-50%) scale(1.25); opacity: 0.6; }
-    }
-
-    .star-header::before,
-    .star-header::after {
-      animation: twinkle 4s ease-in-out infinite alternate;
-    }
-
-
-    .about-container {
-      max-width: 1000px;
-      display: flex;
-      gap: 3rem;
-      margin: 4rem 2rem 6rem;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .photo {
-      flex: 1;
-      max-width: 300px;
-      height: 360px;          /* <— desired crop height */
-      overflow: hidden;       /* hide overflow */
-      border-radius: 12px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    }
-
-    .photo img {
-        width: 100%;
-        height: auto;
-        border-radius: 12px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    }
-
-
-    .bio {
-      flex: 2;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
-      line-height: 1.7;
-      display: flex;
-      flex-direction: column;
-      justify-content: center; /* vertically center the text */
-    }
-
-    .bio p {
-      margin-bottom: 1.4rem;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        text-align: center;
-        padding-left: 0;
-      }
-
-      .about-container {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .bio {
-        font-size: 1rem;
-        align-items: center;
-      }
-
-      .bio p {
-        max-width: 90%;
-      }
-      .photo {
-        width: 100%;
-        max-width: 90%;
-      }
-
+    /*  mobile tweak  */
+    @media(max-width:768px){
+      header{text-align:center;padding-left:0;}
+      .about-container{flex-direction:column;text-align:center;gap:2rem;margin-top:1rem;}
+      .points{align-items:center;font-size:1rem;}
+      .points span{padding-left:0;}
+      .points span::before{display:none;}   /* hide arrows on very small screens if you prefer */
     }
   </style>
 </head>
@@ -171,21 +84,18 @@
     <h1 class="star-header">who I am</h1>
   </header>
 
-
   <div class="about-container">
-    <!-- Replace with your actual image -->
     <div class="photo">
-      <img src="images/about_me.jpg" alt="Portrait of the artist" />
+      <img src="images/about_me.jpg" alt="Portrait of the artist">
     </div>
 
-    <div class="bio">
-      <p>Hello, I’m Louise, a 21-year-old artist and engineering student living in Zurich, originally from Luxembourg with French roots.</p>
-
-      <p>I study mechanical engineering, but I’ve always loved art, languages, and creative expression. I began painting when I was a child and recently returned to it with a new focus during my studies.</p>
-
-      <p>I write poetry to understand my emotions, and I hope my paintings and verses help others feel something too.</p>
-
-      <p>I also enjoy coding, especially when I can blend creativity and technology to build things that support or inspire people.</p>
+    <div class="points">
+      <span>that’s me!</span>
+      <span>I was born in Paris</span>
+      <span>loved drawing when I was 5</span>
+      <span>rhymes are so cool</span>
+      <span>modern tech (AI) is so useful</span>
+      <span>get to know me 🙂</span>
     </div>
   </div>
 </body>
