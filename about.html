@@ -1,33 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>about me</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Sleeping Brush</title>
+
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap');
+
+    :root {
+      --bg: #dceeff;
+      --text: #2b2b2b;
+    }
+
     body {
-      background-color: #f7f2eb;
-      font-family: 'Georgia', serif;
-      color: #3a2e2e;
-      padding: 3em;
-      max-width: 700px;
-      margin: auto;
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      font-family: Arial, sans-serif;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 0.3em;
+
+    .back-btn {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      font-family: 'Playfair Display', cursive;
+      font-size: 1.1rem;
+      text-decoration: none;
+      color: var(--text);
+      background: #fff;
+      padding: 6px 14px;
+      border: 1px solid #999;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
-    p {
-      font-size: 1.1em;
-      line-height: 1.6;
-      margin-bottom: 1.5em;
+
+    .back-btn:hover {
+      background: var(--text);
+      color: #fff;
+    }
+
+    .about-container {
+      max-width: 900px;
+      display: flex;
+      gap: 3rem;
+      margin: 5rem 2rem 6rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .photo {
+      flex: 1;
+      max-width: 300px;
+    }
+
+    .photo img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .bio {
+      flex: 2;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .bio p {
+      margin-bottom: 1.4rem;
+    }
+
+    @media (max-width: 768px) {
+      .about-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .bio {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
+
 <body>
-  <h1>about me</h1>
-  <p>i’m a painter of sleepy worlds, a writer of quiet verses, and a dreamer of warm skies and soft mornings.</p>
-  <p>i study mechanical engineering, but my heart wanders through poetry, brush strokes, and small magic. i love matcha, rainy windows, the smell of old books, and long walks through silent cities.</p>
-  <p>one day, i want to publish a book, build healing tech, and live slowly, with love, art, and honest people.</p>
-  <p>thank you for visiting my quiet corner. 🌙</p>
+  <a class="back-btn" href="index.html">← home</a>
+
+  <div class="about-container">
+    <!-- Replace with your actual image file -->
+    <div class="photo">
+      <img src="images/about-me.jpg" alt="Portrait of the artist" />
+    </div>
+
+    <div class="bio">
+      <p>Hello, I’m Louise — a 21-year-old artist and engineering student living in Zurich, originally from Luxembourg with French roots.</p>
+
+      <p>I study mechanical engineering, but I’ve always loved art, languages, and creative expression. I began painting in 2020 and recently returned to it with a new focus during my studies.</p>
+
+      <p>I write poetry to understand my emotions, and I hope my paintings and verses help others feel something too.</p>
+
+      <p>I also enjoy coding — especially when I can blend creativity and technology to build things that support or inspire people.</p>
+    </div>
+  </div>
 </body>
 </html>
