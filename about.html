@@ -76,10 +76,10 @@
     }
 
     .photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;      /* zoom & crop to fill */
-      object-position: center center; /* tweak focal point if needed */
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     }
 
 
@@ -116,6 +116,11 @@
       .bio p {
         max-width: 90%;
       }
+      .photo {
+        width: 100%;
+        max-width: 90%;
+      }
+
     }
   </style>
 </head>
