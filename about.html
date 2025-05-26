@@ -44,11 +44,26 @@
       color: #fff;
     }
 
+    header {
+      margin-top: 4.5rem;
+      text-align: left;
+      width: 100%;
+      padding-left: 2rem;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', cursive;
+      font-size: 3rem;
+      text-transform: lowercase;
+      letter-spacing: 0.03em;
+      margin: 0;
+    }
+
     .about-container {
-      max-width: 900px;
+      max-width: 1000px;
       display: flex;
       gap: 3rem;
-      margin: 5rem 2rem 6rem;
+      margin: 4rem 2rem 6rem;
       align-items: center;
       justify-content: center;
     }
@@ -69,6 +84,9 @@
       font-family: 'Playfair Display', serif;
       font-size: 1.05rem;
       line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* vertically center the text */
     }
 
     .bio p {
@@ -76,6 +94,11 @@
     }
 
     @media (max-width: 768px) {
+      header {
+        text-align: center;
+        padding-left: 0;
+      }
+
       .about-container {
         flex-direction: column;
         text-align: center;
@@ -83,6 +106,11 @@
 
       .bio {
         font-size: 1rem;
+        align-items: center;
+      }
+
+      .bio p {
+        max-width: 90%;
       }
     }
   </style>
@@ -91,10 +119,14 @@
 <body>
   <a class="back-btn" href="index.html">← home</a>
 
+  <header>
+    <h1>who I am</h1>
+  </header>
+
   <div class="about-container">
-    <!-- Replace with your actual image file -->
+    <!-- Replace with your actual image -->
     <div class="photo">
-      <img src="images/about_me.jpg" alt="Portrait of the artist" />
+      <img src="about_me.jpg" alt="Portrait of the artist" />
     </div>
 
     <div class="bio">
