@@ -148,6 +148,74 @@
       position: relative; /* For absolute positioning of annotations */
     }
 
+    .bio {
+      flex: 2;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* vertically center the text */
+      position: relative; /* For annotation positioning */
+    }
+
+    .bio p {
+      margin-bottom: 1.4rem;
+      position: relative; /* For annotation positioning */
+    }
+
+    /* Annotation styles */
+    .annotation {
+      position: absolute;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.85rem;
+      line-height: 1.4;
+      background: transparent;
+      padding: 0;
+      color: var(--text);
+      width: 120px;
+      z-index: 10;
+    }
+
+    .annotation-arrow {
+      position: absolute;
+      width: 40px;
+      height: 20px;
+      z-index: 9;
+      background-image: url('images/arrow.png'); /* Add your arrow image */
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    /* Specific annotation positions */
+    .annotation-1 {
+      top: -75px;
+      left: -100px;
+      width: 140px;
+    }
+
+    .annotation-arrow-1 {
+      top: -60px;
+      left: -150px;
+      width: 50px;
+      transform-origin: center center;
+      transform: rotate(120deg) scaleX(-1);
+    }
+
+    .annotation-2 {
+      top: 180px;
+      right: 135px;
+      width: 140px;
+    }
+
+    .annotation-arrow-2 {
+      top: 180px;
+      right: 285px;
+      width: 40px;
+      transform-origin: center center;
+      transform: rotate(20deg);
+    }
+
     @media (max-width: 600px) {
       .gallery {
         justify-content: center;
