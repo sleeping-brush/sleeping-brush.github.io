@@ -189,7 +189,7 @@
 
     /* Specific annotation positions */
     .annotation-1 {
-      top: -15px;
+      top: 0px;
       left: 0px;
       width: 140px;
     }
@@ -213,7 +213,21 @@
       right: 285px;
       width: 40px;
       transform-origin: center center;
-      transform: rotate(20deg) scaleX(-1);
+      transform: rotate(20deg);
+    }
+
+    .annotation-3 {
+      top: 300px;
+      right: 55px;
+      width: 140px;
+    }
+
+    .annotation-arrow-3 {
+      top: 300px;
+      right: 200px;
+      width: 40px;
+      transform-origin: center center;
+      transform: rotate(20deg);
     }
 
     @media (max-width: 600px) {
@@ -272,6 +286,11 @@
         Painting since I was 5
       </div>
       <div class="annotation-arrow annotation-arrow-2"></div>
+
+      <div class="annotation annotation-3">
+        Painting since I was 5
+      </div>
+      <div class="annotation-arrow annotation-arrow-3"></div>
 
   <section class="gallery">
     <!-- Painting 1 — rotated 90° -->
