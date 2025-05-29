@@ -98,6 +98,55 @@
       color: var(--text);
       line-height: 1.35;
     }
+    /* decorative stars around "who I am" */
+    .star-header {
+      position: relative;                 /*  enable pseudo-elements  */
+      display: inline-block;              /*  so stars hug the text   */
+      padding: 0 2.2rem;                  /*  room for the stars      */
+    }
+    
+    /* left star */
+    .star-header::before,
+    .star-header::after {
+      content: "★";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) scale(1);
+      font-family: 'Playfair Display', serif;   /* keeps same feel */
+      font-size: 1.6rem;
+      color: #f7c948;                           /* warm gold star  */
+      text-shadow: 0 0 6px rgba(255, 255, 255, 0.7);
+    }
+    
+    .star-header::before {
+      left: 0;
+    }
+    
+    .star-header::after {
+      right: 0;
+    }
+    
+    /* subtle twinkle animation */
+    @keyframes twinkle {
+      0%, 100% { transform: translateY(-50%) scale(1);   opacity: 1; }
+      50%      { transform: translateY(-50%) scale(1.25); opacity: 0.6; }
+    }
+
+    .star-header::before,
+    .star-header::after {
+      animation: twinkle 4s ease-in-out infinite alternate;
+    }
+
+
+    .about-container {
+      max-width: 1000px;
+      display: flex;
+      gap: 3rem;
+      margin: 4rem 2rem 6rem;
+      align-items: center;
+      justify-content: center;
+      position: relative; /* For absolute positioning of annotations */
+    }
 
     @media (max-width: 600px) {
       .gallery {
@@ -122,6 +171,7 @@
         flex: 0 0 38%;
         margin: 0 auto;
       }
+
 
 
     }
